@@ -79,6 +79,47 @@ const ItemPage = () => {
             </div>
           </div>
         </div>
+
+        <div className="col-12 col-md-12">
+          <div className="p-3 mb-4 border">
+            <div>
+              <h5 className="my-2">Contacter le vendeur par email</h5>
+
+              <form>
+                <div className="mb-3">
+                  <label for="exampleFormControlInput1" className="form-label">
+                    Votre email address
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <label
+                    for="exampleFormControlTextarea1"
+                    className="form-label"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <div className="d-grid gap-2">
+                  <button className="btn btn-primary" type="button">
+                    Envoyer
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
