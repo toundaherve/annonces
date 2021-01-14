@@ -87,7 +87,10 @@ const ItemPage = () => {
 
               <form>
                 <div className="mb-3">
-                  <label for="exampleFormControlInput1" className="form-label">
+                  <label
+                    htmlFor="exampleFormControlInput1"
+                    className="form-label"
+                  >
                     Votre email address
                   </label>
                   <input
@@ -99,7 +102,7 @@ const ItemPage = () => {
 
                 <div className="mb-3">
                   <label
-                    for="exampleFormControlTextarea1"
+                    htmlFor="exampleFormControlTextarea1"
                     className="form-label"
                   >
                     Message
