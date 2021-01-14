@@ -1,19 +1,17 @@
 import React from "react";
+import { Section } from "./HomePage";
 import Layout from "./Layout";
 
 const PostAd = () => {
   return (
     <Layout>
-      <div>
-        <h3 className="my-3">Poster une annonce</h3>
-
-        <p className="my-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-          debitis accusamus similique beatae optio pariatur.
+      <Section title="Passer une annonce" next={false}>
+        <p className="mb-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
 
         <form>
-          <div className="border p-3">
+          <div className="">
             <div className="mb-3">
               <div className="">
                 <div className="mb-2">Categorie: </div>
@@ -85,7 +83,7 @@ const PostAd = () => {
             </div>
           </div>
         </form>
-      </div>
+      </Section>
     </Layout>
   );
 };

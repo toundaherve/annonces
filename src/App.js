@@ -6,7 +6,7 @@ import ItemPage from "./components/ItemPage";
 import PostAd from "./components/PostAd";
 
 function App() {
-  return <PostAd />;
+  return <ItemPage />;
 }
 
 export default App;

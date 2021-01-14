@@ -17,12 +17,17 @@ const HomePage = () => {
   );
 };
 
-export function Section({ children, title }) {
+export function Section({ children, title, next = true }) {
   return (
     <div className="p-3 mb-4 border">
       <h4 className="mb-3">{title}</h4>
       {children}
-      <b>'>>'</b> <a href="#3">Voir plus de {title}</a>
+      {next && (
+        <>
+          {" "}
+          <b>'>>'</b> <a href="#3">Voir plus de {title}</a>
+        </>
+      )}
     </div>
   );
 }

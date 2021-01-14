@@ -1,7 +1,12 @@
 import React from "react";
 import { Section } from "./HomePage";
 
-const Layout = ({ children }) => {
+const Layout = ({
+  leftAside = true,
+  rightAside = true,
+  breadcrumb = true,
+  children,
+}) => {
   return (
     <div className="container-lg">
       <div>
@@ -34,55 +39,61 @@ const Layout = ({ children }) => {
         </form>
       </div>
 
-      <div className="mb-4">
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <a href="#1">Home</a>
-            </li>
-            <li className="breadcrumb-item">
-              <a href="#1">Library</a>
-            </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              Data
-            </li>
-          </ol>
-        </nav>
-      </div>
+      {breadcrumb && (
+        <div className="mb-4">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item">
+                <a href="#1">Home</a>
+              </li>
+              <li className="breadcrumb-item">
+                <a href="#1">Library</a>
+              </li>
+              <li className="breadcrumb-item active" aria-current="page">
+                Data
+              </li>
+            </ol>
+          </nav>
+        </div>
+      )}
 
       <div className="row">
-        <div className="col-12 col-sm-3 col-lg-3">
-          <Section title="Rubrique">
-            <ul className="list-unstyled">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-                <li key={n} className="pb-1">
-                  Animaux (657)
-                </li>
-              ))}
-            </ul>
-          </Section>
-        </div>
+        {leftAside && (
+          <div className="d-none d-sm-block col-12 col-sm-3 col-lg-3">
+            <Section title="Rubrique">
+              <ul className="list-unstyled">
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+                  <li key={n} className="pb-1">
+                    Animaux (657)
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          </div>
+        )}
 
         <div className="col-12 col-sm-9 col-lg-6">{children}</div>
 
-        <div className="d-sm-none d-lg-block col-12 col-lg-3">
-          <div className="border p-3 mb-4">
-            <p className="my-4 h5 fw-normal">
-              Petitesannonces.sh est un site de reference pour consulter et
-              publier gratuitement des annonces en Suisse romande.
-            </p>
-          </div>
-
-          {[1, 2, 3].map((n) => (
-            <div key={n} className="p-3 mb-3 bg-light">
-              <h6 className="mb-1">Grand et lumineux 3p (83m2) Av. Wendt</h6>
-              <p className="m-0">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-                accusamus tempora. Nemo qui voluptates distinctio
+        {rightAside && (
+          <div className="d-sm-none d-lg-block col-12 col-lg-3">
+            <div className="border p-3 mb-4">
+              <p className="my-4 h5 fw-normal">
+                Petitesannonces.sh est un site de reference pour consulter et
+                publier gratuitement des annonces en Suisse romande.
               </p>
             </div>
-          ))}
-        </div>
+
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="p-3 mb-3 bg-light">
+                <h6 className="mb-1">Grand et lumineux 3p (83m2) Av. Wendt</h6>
+                <p className="m-0">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugiat, accusamus tempora. Nemo qui voluptates distinctio
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="row justify-content-center">
